@@ -1,25 +1,28 @@
+/* global $, bootstrap, applyLanguage, getSavedLanguage */
 
-/* global $, bootstrap */
+// Init language
+(function(){
+  const lang = (typeof getSavedLanguage === "function") ? getSavedLanguage() : "ar";
+  if (typeof applyLanguage === "function") applyLanguage(lang);
+
+  $("#langToggle").on("click", function(){
+    const current = document.documentElement.getAttribute("data-lang") || "ar";
+    const next = current === "ar" ? "en" : "ar";
+    applyLanguage(next);
+  });
+})();
 
 // Reveal/Hide on scroll using IntersectionObserver
 (function () {
   const $targets = $(".reveal-on-scroll");
-
-  if (!("IntersectionObserver" in window)) {
-    $targets.addClass("is-visible");
-    return;
-  }
+  if (!("IntersectionObserver" in window)) { $targets.addClass("is-visible"); return; }
 
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         const el = entry.target;
-
-        if (entry.isIntersecting) {
-          el.classList.add("is-visible");
-        } else {
-          el.classList.remove("is-visible");
-        }
+        if (entry.isIntersecting) el.classList.add("is-visible");
+        else el.classList.remove("is-visible");
       });
     },
     { root: null, threshold: 0.18, rootMargin: "0px 0px -10% 0px" }
@@ -28,7 +31,7 @@
   $targets.each(function () { observer.observe(this); });
 })();
 
-// Project modal: fill content from data-attributes
+// Project modal
 $(document).on("click", "[data-bs-target='#projectModal']", function () {
   const $btn = $(this);
   $("#pm-title").text($btn.data("title") || "Project");
@@ -38,7 +41,7 @@ $(document).on("click", "[data-bs-target='#projectModal']", function () {
   $("#pm-link").attr("href", $btn.data("link") || "#");
 });
 
-// Shared Projects: filter + search
+// Projects filter + search
 (function () {
   let activeFilter = "all";
 
@@ -49,10 +52,8 @@ $(document).on("click", "[data-bs-target='#projectModal']", function () {
       const $col = $(this);
       const tags = ($col.data("tags") || "").toString().toLowerCase();
       const text = ($col.text() || "").toLowerCase();
-
       const matchesFilter = (activeFilter === "all") || tags.includes(activeFilter);
       const matchesSearch = (!q) || text.includes(q);
-
       $col.toggle(matchesFilter && matchesSearch);
     });
   }
@@ -70,6 +71,4 @@ $(document).on("click", "[data-bs-target='#projectModal']", function () {
 })();
 
 // Footer year
-$(function () {
-  $("#year").text(new Date().getFullYear());
-});
+$(function () { $("#year").text(new Date().getFullYear()); });

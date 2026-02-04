@@ -1,12 +1,10 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar" dir="rtl" data-lang="ar">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Team Portfolio Timeline</title>
-  <!---->
-  <!--Ali Zakaryaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa-->
-  <!--Hell Dolaaaaaaaaaaaaaaaaaaaaaaaaaaaa-->
+  <title data-i18n="page.title">Team Portfolio</title>
+
   <!-- Bootstrap (CDN) -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Bootstrap Icons -->
@@ -19,20 +17,28 @@
   <!-- Topbar -->
   <nav class="navbar navbar-expand-lg sticky-top navbar-dark glass-nav">
     <div class="container">
-      <a class="navbar-brand fw-bold" href="#top">
+      <a class="navbar-brand fw-bold" href="#top" data-i18n="nav.brand">
         <span class="brand-dot"></span> Team Portfolio
       </a>
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+      <div class="d-flex align-items-center gap-2 order-lg-2 ms-auto">
+        <!-- Language toggle -->
+        <button id="langToggle" class="btn btn-sm btn-outline-light lang-btn" type="button">
+          <i class="bi bi-translate"></i>
+          <span class="lang-label">EN</span>
+        </button>
 
-      <div class="collapse navbar-collapse" id="nav">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+
+      <div class="collapse navbar-collapse order-lg-1" id="nav">
         <ul class="navbar-nav ms-auto gap-2">
-          <li class="nav-item"><a class="nav-link" href="#about">نبذة</a></li>
-          <li class="nav-item"><a class="nav-link" href="#team">الفريق</a></li>
-          <li class="nav-item"><a class="nav-link" href="#projects">المشاريع</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">تواصل</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about" data-i18n="nav.about">نبذة</a></li>
+          <li class="nav-item"><a class="nav-link" href="#team" data-i18n="nav.team">الفريق</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects" data-i18n="nav.projects">المشاريع</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact" data-i18n="nav.contact">تواصل</a></li>
         </ul>
       </div>
     </div>
@@ -44,27 +50,27 @@
       <div class="row align-items-center g-4">
         <div class="col-lg-7">
           <div class="reveal-on-scroll">
-            <h1 class="display-5 fw-bold mb-3">
+            <h1 class="display-5 fw-bold mb-3" data-i18n="hero.title">
               Portfolio جامد بــ Animation + Timeline
             </h1>
-            <p class="lead text-muted mb-4">
+            <p class="lead text-muted mb-4" data-i18n="hero.subtitle">
               فريق Full Stack .NET Developers — سكّرول لتحت وشوف الأقسام بتظهر بسلاسة، وبتختفي لما تخرج من الشاشة.
             </p>
             <div class="d-flex flex-wrap gap-2">
               <a class="btn btn-primary btn-lg" href="#team">
-                شوف الفريق <i class="bi bi-arrow-down-short"></i>
+                <span data-i18n="hero.ctaTeam">شوف الفريق</span> <i class="bi bi-arrow-down-short"></i>
               </a>
               <a class="btn btn-outline-light btn-lg" href="#projects">
-                شوف المشاريع <i class="bi bi-kanban"></i>
+                <span data-i18n="hero.ctaProjects">شوف المشاريع</span> <i class="bi bi-kanban"></i>
               </a>
               <button class="btn btn-outline-light btn-lg" data-bs-toggle="modal" data-bs-target="#howToEditModal">
-                إزاي تعدّل البيانات؟ <i class="bi bi-pencil-square"></i>
+                <span data-i18n="hero.ctaEdit">إزاي تعدّل البيانات؟</span> <i class="bi bi-pencil-square"></i>
               </button>
             </div>
 
             <div class="mt-4 d-flex flex-wrap gap-3 small text-muted">
               <span class="pill"><i class="bi bi-bootstrap"></i> Bootstrap 5</span>
-              <span class="pill"><i class="bi bi-lightning-charge"></i> Scroll Reveal</span>
+              <span class="pill"><i class="bi bi-lightning-charge"></i> <span data-i18n="hero.pillReveal">Scroll Reveal</span></span>
               <span class="pill"><i class="bi bi-code-slash"></i> jQuery</span>
             </div>
           </div>
@@ -80,14 +86,14 @@
                 </div>
                 <div>
                   <div class="fw-bold">Full Stack .NET Team</div>
-                  <div class="text-muted small">Web Apps • APIs • Dashboards</div>
+                  <div class="text-muted small" data-i18n="hero.cardSubtitle">Web Apps • APIs • Dashboards</div>
                 </div>
               </div>
               <ul class="list-unstyled mb-0 text-muted small">
-                <li class="mb-2"><i class="bi bi-check2-circle me-1"></i> Timeline للفريق</li>
-                <li class="mb-2"><i class="bi bi-check2-circle me-1"></i> Section مشاريع مشترك</li>
-                <li class="mb-2"><i class="bi bi-check2-circle me-1"></i> Modals لعرض تفاصيل المشروع</li>
-                <li><i class="bi bi-check2-circle me-1"></i> Reveal/Hide مع الـ Scroll</li>
+                <li class="mb-2"><i class="bi bi-check2-circle me-1"></i> <span data-i18n="hero.b1">Timeline للفريق</span></li>
+                <li class="mb-2"><i class="bi bi-check2-circle me-1"></i> <span data-i18n="hero.b2">Section مشاريع مشترك</span></li>
+                <li class="mb-2"><i class="bi bi-check2-circle me-1"></i> <span data-i18n="hero.b3">Modals لعرض تفاصيل المشروع</span></li>
+                <li><i class="bi bi-check2-circle me-1"></i> <span data-i18n="hero.b4">Reveal/Hide مع الـ Scroll</span></li>
               </ul>
             </div>
           </div>
@@ -101,8 +107,8 @@
   <section id="about" class="section">
     <div class="container">
       <div class="section-title reveal-on-scroll">
-        <h2 class="fw-bold mb-2">نبذة سريعة</h2>
-        <p class="text-muted mb-0">
+        <h2 class="fw-bold mb-2" data-i18n="about.title">نبذة سريعة</h2>
+        <p class="text-muted mb-0" data-i18n="about.subtitle">
           هنا تقدر تعمل دعاية لنفسك وللفريق: سيكشن للفريق + سيكشن مشاريع مشتركة بروابط ووصف.
         </p>
       </div>
@@ -112,8 +118,8 @@
           <div class="info-card reveal-on-scroll">
             <div class="icon"><i class="bi bi-diagram-3"></i></div>
             <div>
-              <div class="fw-semibold">Projects مشتركة</div>
-              <div class="text-muted small">كل المشاريع في Section واحدة للفريق كله.</div>
+              <div class="fw-semibold" data-i18n="about.c1t">Projects مشتركة</div>
+              <div class="text-muted small" data-i18n="about.c1d">كل المشاريع في Section واحدة للفريق كله.</div>
             </div>
           </div>
         </div>
@@ -121,8 +127,8 @@
           <div class="info-card reveal-on-scroll">
             <div class="icon"><i class="bi bi-arrow-down-up"></i></div>
             <div>
-              <div class="fw-semibold">Reveal & Hide</div>
-              <div class="text-muted small">العناصر بتظهر/تختفي حسب مكانها في الشاشة.</div>
+              <div class="fw-semibold" data-i18n="about.c2t">Reveal & Hide</div>
+              <div class="text-muted small" data-i18n="about.c2d">العناصر بتظهر/تختفي حسب مكانها في الشاشة.</div>
             </div>
           </div>
         </div>
@@ -130,8 +136,8 @@
           <div class="info-card reveal-on-scroll">
             <div class="icon"><i class="bi bi-sliders"></i></div>
             <div>
-              <div class="fw-semibold">سهل التعديل</div>
-              <div class="text-muted small">كل البيانات في HTML — عدّلها بسرعة.</div>
+              <div class="fw-semibold" data-i18n="about.c3t">سهل التعديل</div>
+              <div class="text-muted small" data-i18n="about.c3d">كل البيانات في HTML — عدّلها بسرعة.</div>
             </div>
           </div>
         </div>
@@ -143,13 +149,11 @@
   <section id="team" class="section section--alt">
     <div class="container">
       <div class="section-title reveal-on-scroll">
-        <h2 class="fw-bold mb-2">Team Timeline</h2>
-        <p class="text-muted mb-0">سكّرول لتحت… كل عضو هيظهر (بدون مشاريع تحت كل واحد).</p>
+        <h2 class="fw-bold mb-2" data-i18n="team.title">Team Timeline</h2>
+        <p class="text-muted mb-0" data-i18n="team.subtitle">سكّرول لتحت… كل عضو هيظهر (بدون مشاريع تحت كل واحد).</p>
       </div>
 
       <div class="timeline mt-4">
-
-        <!-- PERSON 1 -->
         <article class="timeline-item reveal-on-scroll">
           <div class="timeline-dot"></div>
           <div class="timeline-card">
@@ -163,30 +167,20 @@
                 <div class="d-flex flex-wrap align-items-center justify-content-between gap-2">
                   <div>
                     <h3 class="h5 mb-1 fw-bold">Ali Zakaryaa Kamel</h3>
-                    <div class="text-muted small">Software Full Stack .NET Developer</div>
+                    <div class="text-muted small" data-i18n="team.role">Software Full Stack .NET Developer</div>
                   </div>
                   <div class="d-flex flex-wrap gap-2">
-                    <a class="btn btn-sm btn-outline-light" href="#" target="_blank" rel="noreferrer">
-                      <i class="bi bi-link-45deg"></i> LinkedIn
-                    </a>
-                    <a class="btn btn-sm btn-outline-light" href="#" target="_blank" rel="noreferrer">
-                      <i class="bi bi-github"></i> GitHub
-                    </a>
-                    <a class="btn btn-sm btn-primary" href="mailto:example@mail.com">
-                      <i class="bi bi-envelope"></i> Email
-                    </a>
+                    <a class="btn btn-sm btn-outline-light" href="#" target="_blank" rel="noreferrer"><i class="bi bi-link-45deg"></i> LinkedIn</a>
+                    <a class="btn btn-sm btn-outline-light" href="#" target="_blank" rel="noreferrer"><i class="bi bi-github"></i> GitHub</a>
+                    <a class="btn btn-sm btn-primary" href="mailto:example@mail.com"><i class="bi bi-envelope"></i> <span data-i18n="team.email">Email</span></a>
                   </div>
                 </div>
-
-                <p class="text-muted mt-3 mb-0">
-                  اكتب هنا وصف بسيط عن خبرتك… (Placeholder)
-                </p>
+                <p class="text-muted mt-3 mb-0" data-i18n="team.p1desc">اكتب هنا وصف بسيط عن خبرتك… (Placeholder)</p>
               </div>
             </div>
           </div>
         </article>
 
-        <!-- PERSON 2 -->
         <article class="timeline-item reveal-on-scroll">
           <div class="timeline-dot"></div>
           <div class="timeline-card">
@@ -200,30 +194,20 @@
                 <div class="d-flex flex-wrap align-items-center justify-content-between gap-2">
                   <div>
                     <h3 class="h5 mb-1 fw-bold">Yahia Zakarya Sayed</h3>
-                    <div class="text-muted small">Software Full Stack .NET Developer</div>
+                    <div class="text-muted small" data-i18n="team.role">Software Full Stack .NET Developer</div>
                   </div>
                   <div class="d-flex flex-wrap gap-2">
-                    <a class="btn btn-sm btn-outline-light" href="#" target="_blank" rel="noreferrer">
-                      <i class="bi bi-link-45deg"></i> LinkedIn
-                    </a>
-                    <a class="btn btn-sm btn-outline-light" href="#" target="_blank" rel="noreferrer">
-                      <i class="bi bi-github"></i> GitHub
-                    </a>
-                    <a class="btn btn-sm btn-primary" href="mailto:example@mail.com">
-                      <i class="bi bi-envelope"></i> Email
-                    </a>
+                    <a class="btn btn-sm btn-outline-light" href="#" target="_blank" rel="noreferrer"><i class="bi bi-link-45deg"></i> LinkedIn</a>
+                    <a class="btn btn-sm btn-outline-light" href="#" target="_blank" rel="noreferrer"><i class="bi bi-github"></i> GitHub</a>
+                    <a class="btn btn-sm btn-primary" href="mailto:example@mail.com"><i class="bi bi-envelope"></i> <span data-i18n="team.email">Email</span></a>
                   </div>
                 </div>
-
-                <p class="text-muted mt-3 mb-0">
-                  اكتب هنا وصف بسيط عن خبرتك… (Placeholder)
-                </p>
+                <p class="text-muted mt-3 mb-0" data-i18n="team.p2desc">اكتب هنا وصف بسيط عن خبرتك… (Placeholder)</p>
               </div>
             </div>
           </div>
         </article>
 
-        <!-- PERSON 3 -->
         <article class="timeline-item reveal-on-scroll">
           <div class="timeline-dot"></div>
           <div class="timeline-card">
@@ -237,30 +221,20 @@
                 <div class="d-flex flex-wrap align-items-center justify-content-between gap-2">
                   <div>
                     <h3 class="h5 mb-1 fw-bold">Mohamed Sayed Abd ElSabour</h3>
-                    <div class="text-muted small">Software Full Stack .NET Developer</div>
+                    <div class="text-muted small" data-i18n="team.role">Software Full Stack .NET Developer</div>
                   </div>
                   <div class="d-flex flex-wrap gap-2">
-                    <a class="btn btn-sm btn-outline-light" href="#" target="_blank" rel="noreferrer">
-                      <i class="bi bi-link-45deg"></i> LinkedIn
-                    </a>
-                    <a class="btn btn-sm btn-outline-light" href="#" target="_blank" rel="noreferrer">
-                      <i class="bi bi-github"></i> GitHub
-                    </a>
-                    <a class="btn btn-sm btn-primary" href="mailto:example@mail.com">
-                      <i class="bi bi-envelope"></i> Email
-                    </a>
+                    <a class="btn btn-sm btn-outline-light" href="#" target="_blank" rel="noreferrer"><i class="bi bi-link-45deg"></i> LinkedIn</a>
+                    <a class="btn btn-sm btn-outline-light" href="#" target="_blank" rel="noreferrer"><i class="bi bi-github"></i> GitHub</a>
+                    <a class="btn btn-sm btn-primary" href="mailto:example@mail.com"><i class="bi bi-envelope"></i> <span data-i18n="team.email">Email</span></a>
                   </div>
                 </div>
-
-                <p class="text-muted mt-3 mb-0">
-                  اكتب هنا وصف بسيط عن خبرتك… (Placeholder)
-                </p>
+                <p class="text-muted mt-3 mb-0" data-i18n="team.p3desc">اكتب هنا وصف بسيط عن خبرتك… (Placeholder)</p>
               </div>
             </div>
           </div>
         </article>
 
-        <!-- PERSON 4 -->
         <article class="timeline-item reveal-on-scroll">
           <div class="timeline-dot"></div>
           <div class="timeline-card">
@@ -274,24 +248,15 @@
                 <div class="d-flex flex-wrap align-items-center justify-content-between gap-2">
                   <div>
                     <h3 class="h5 mb-1 fw-bold">Magdy Mohamed Abed ElSahFiea</h3>
-                    <div class="text-muted small">Software Full Stack .NET Developer</div>
+                    <div class="text-muted small" data-i18n="team.role">Software Full Stack .NET Developer</div>
                   </div>
                   <div class="d-flex flex-wrap gap-2">
-                    <a class="btn btn-sm btn-outline-light" href="#" target="_blank" rel="noreferrer">
-                      <i class="bi bi-link-45deg"></i> LinkedIn
-                    </a>
-                    <a class="btn btn-sm btn-outline-light" href="#" target="_blank" rel="noreferrer">
-                      <i class="bi bi-github"></i> GitHub
-                    </a>
-                    <a class="btn btn-sm btn-primary" href="mailto:example@mail.com">
-                      <i class="bi bi-envelope"></i> Email
-                    </a>
+                    <a class="btn btn-sm btn-outline-light" href="#" target="_blank" rel="noreferrer"><i class="bi bi-link-45deg"></i> LinkedIn</a>
+                    <a class="btn btn-sm btn-outline-light" href="#" target="_blank" rel="noreferrer"><i class="bi bi-github"></i> GitHub</a>
+                    <a class="btn btn-sm btn-primary" href="mailto:example@mail.com"><i class="bi bi-envelope"></i> <span data-i18n="team.email">Email</span></a>
                   </div>
                 </div>
-
-                <p class="text-muted mt-3 mb-0">
-                  اكتب هنا وصف بسيط عن خبرتك… (Placeholder)
-                </p>
+                <p class="text-muted mt-3 mb-0" data-i18n="team.p4desc">اكتب هنا وصف بسيط عن خبرتك… (Placeholder)</p>
               </div>
             </div>
           </div>
@@ -305,134 +270,107 @@
   <section id="projects" class="section">
     <div class="container">
       <div class="section-title reveal-on-scroll">
-        <h2 class="fw-bold mb-2">المشاريع المشتركة</h2>
-        <p class="text-muted mb-0">
-          كل مشاريع الفريق هنا — عدّل الاسم/الوصف/اللينكات لكل مشروع. (Placeholder)
-        </p>
+        <h2 class="fw-bold mb-2" data-i18n="projects.title">المشاريع المشتركة</h2>
+        <p class="text-muted mb-0" data-i18n="projects.subtitle">كل مشاريع الفريق هنا — عدّل الاسم/الوصف/اللينكات لكل مشروع. (Placeholder)</p>
       </div>
 
-      <!-- Optional: filter/search (front-end only) -->
       <div class="row g-3 align-items-center mt-3 reveal-on-scroll">
         <div class="col-lg-6">
           <div class="search-wrap">
             <i class="bi bi-search"></i>
-            <input id="projectSearch" class="form-control" placeholder="ابحث عن مشروع بالاسم أو بالـ Stack..." />
+            <input id="projectSearch" class="form-control" data-i18n-placeholder="projects.searchPh" placeholder="ابحث عن مشروع..." />
           </div>
         </div>
         <div class="col-lg-6 d-flex justify-content-lg-end gap-2 flex-wrap">
-          <button class="btn btn-outline-light btn-sm filter-btn active" data-filter="all">
-            الكل
-          </button>
-          <button class="btn btn-outline-light btn-sm filter-btn" data-filter="web">
-            Web Apps
-          </button>
-          <button class="btn btn-outline-light btn-sm filter-btn" data-filter="api">
-            APIs
-          </button>
-          <button class="btn btn-outline-light btn-sm filter-btn" data-filter="dashboard">
-            Dashboards
-          </button>
+          <button class="btn btn-outline-light btn-sm filter-btn active" data-filter="all" data-i18n="projects.fAll">الكل</button>
+          <button class="btn btn-outline-light btn-sm filter-btn" data-filter="web" data-i18n="projects.fWeb">Web Apps</button>
+          <button class="btn btn-outline-light btn-sm filter-btn" data-filter="api" data-i18n="projects.fApi">APIs</button>
+          <button class="btn btn-outline-light btn-sm filter-btn" data-filter="dashboard" data-i18n="projects.fDash">Dashboards</button>
         </div>
       </div>
 
       <div class="row g-3 mt-2" id="projectsGrid">
-        <!-- Project 1 -->
         <div class="col-md-6 col-xl-4 project-col reveal-on-scroll" data-tags="web api">
           <div class="project-card project-card--big">
             <div class="project-card__top">
               <div class="project-icon"><i class="bi bi-boxes"></i></div>
               <div>
                 <div class="fw-semibold project-title">Project Name 01</div>
-                <div class="small text-muted project-sub">Short description (1 line)</div>
+                <div class="small text-muted project-sub" data-i18n="projects.cardShortPh">Short description (1 line)</div>
               </div>
             </div>
             <div class="project-meta">
               <span class="badge text-bg-light project-stack">.NET 8 • Web API • SQL Server</span>
-              <span class="badge text-bg-light">Team</span>
+              <span class="badge text-bg-light" data-i18n="projects.badgeTeam">Team</span>
             </div>
             <div class="project-actions">
-              <a class="btn btn-sm btn-outline-light" href="#" target="_blank" rel="noreferrer">
-                <i class="bi bi-box-arrow-up-right"></i> Demo
-              </a>
-              <button class="btn btn-sm btn-primary"
-                      data-bs-toggle="modal"
-                      data-bs-target="#projectModal"
+              <a class="btn btn-sm btn-outline-light" href="#" target="_blank" rel="noreferrer"><i class="bi bi-box-arrow-up-right"></i> <span data-i18n="projects.demo">Demo</span></a>
+              <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#projectModal"
                       data-title="Project Name 01"
                       data-person="Team (Ali • Yahia • Mohamed • Magdy)"
                       data-stack=".NET 8 • Web API • SQL Server"
                       data-desc="وصف أطول للمشروع… اكتب المشكلة والحل والنتيجة."
                       data-link="#">
-                التفاصيل
+                <span data-i18n="projects.details">التفاصيل</span>
               </button>
             </div>
           </div>
         </div>
 
-        <!-- Project 2 -->
         <div class="col-md-6 col-xl-4 project-col reveal-on-scroll" data-tags="dashboard web">
           <div class="project-card project-card--big">
             <div class="project-card__top">
               <div class="project-icon"><i class="bi bi-graph-up"></i></div>
               <div>
                 <div class="fw-semibold project-title">Project Name 02</div>
-                <div class="small text-muted project-sub">Short description (1 line)</div>
+                <div class="small text-muted project-sub" data-i18n="projects.cardShortPh">Short description (1 line)</div>
               </div>
             </div>
             <div class="project-meta">
               <span class="badge text-bg-light project-stack">Dashboard • Charts • Auth</span>
-              <span class="badge text-bg-light">Team</span>
+              <span class="badge text-bg-light" data-i18n="projects.badgeTeam">Team</span>
             </div>
             <div class="project-actions">
-              <a class="btn btn-sm btn-outline-light" href="#" target="_blank" rel="noreferrer">
-                <i class="bi bi-box-arrow-up-right"></i> Demo
-              </a>
-              <button class="btn btn-sm btn-primary"
-                      data-bs-toggle="modal"
-                      data-bs-target="#projectModal"
+              <a class="btn btn-sm btn-outline-light" href="#" target="_blank" rel="noreferrer"><i class="bi bi-box-arrow-up-right"></i> <span data-i18n="projects.demo">Demo</span></a>
+              <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#projectModal"
                       data-title="Project Name 02"
                       data-person="Team (Ali • Yahia • Mohamed • Magdy)"
                       data-stack="Dashboard • Charts • Auth"
                       data-desc="وصف أطول للمشروع… KPIs/Impact."
                       data-link="#">
-                التفاصيل
+                <span data-i18n="projects.details">التفاصيل</span>
               </button>
             </div>
           </div>
         </div>
 
-        <!-- Project 3 -->
         <div class="col-md-6 col-xl-4 project-col reveal-on-scroll" data-tags="api">
           <div class="project-card project-card--big">
             <div class="project-card__top">
               <div class="project-icon"><i class="bi bi-shield-check"></i></div>
               <div>
                 <div class="fw-semibold project-title">Project Name 03</div>
-                <div class="small text-muted project-sub">Short description (1 line)</div>
+                <div class="small text-muted project-sub" data-i18n="projects.cardShortPh">Short description (1 line)</div>
               </div>
             </div>
             <div class="project-meta">
               <span class="badge text-bg-light project-stack">Identity • JWT • RBAC</span>
-              <span class="badge text-bg-light">Team</span>
+              <span class="badge text-bg-light" data-i18n="projects.badgeTeam">Team</span>
             </div>
             <div class="project-actions">
-              <a class="btn btn-sm btn-outline-light" href="#" target="_blank" rel="noreferrer">
-                <i class="bi bi-box-arrow-up-right"></i> Demo
-              </a>
-              <button class="btn btn-sm btn-primary"
-                      data-bs-toggle="modal"
-                      data-bs-target="#projectModal"
+              <a class="btn btn-sm btn-outline-light" href="#" target="_blank" rel="noreferrer"><i class="bi bi-box-arrow-up-right"></i> <span data-i18n="projects.demo">Demo</span></a>
+              <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#projectModal"
                       data-title="Project Name 03"
                       data-person="Team (Ali • Yahia • Mohamed • Magdy)"
                       data-stack="Identity • JWT • RBAC"
                       data-desc="وصف أطول للمشروع… Security & Roles."
                       data-link="#">
-                التفاصيل
+                <span data-i18n="projects.details">التفاصيل</span>
               </button>
             </div>
           </div>
         </div>
 
-        <!-- Add more projects by copying a .project-col -->
       </div>
     </div>
   </section>
@@ -441,8 +379,8 @@
   <section id="contact" class="section section--alt">
     <div class="container">
       <div class="section-title reveal-on-scroll">
-        <h2 class="fw-bold mb-2">تواصل</h2>
-        <p class="text-muted mb-0">خلي هنا أي لينكات عامة للفريق (موقع/إيميل/واتساب…)</p>
+        <h2 class="fw-bold mb-2" data-i18n="contact.title">تواصل</h2>
+        <p class="text-muted mb-0" data-i18n="contact.subtitle">خلي هنا أي لينكات عامة للفريق (موقع/إيميل/واتساب…)</p>
       </div>
 
       <div class="row g-3 mt-2">
@@ -450,22 +388,22 @@
           <div class="contact-card reveal-on-scroll">
             <div class="row g-3">
               <div class="col-md-6">
-                <label class="form-label">اسمك</label>
-                <input class="form-control" placeholder="اكتب الاسم">
+                <label class="form-label" data-i18n="contact.name">اسمك</label>
+                <input class="form-control" data-i18n-placeholder="contact.namePh" placeholder="اكتب الاسم">
               </div>
               <div class="col-md-6">
-                <label class="form-label">إيميل</label>
-                <input class="form-control" placeholder="example@mail.com">
+                <label class="form-label" data-i18n="contact.email">إيميل</label>
+                <input class="form-control" data-i18n-placeholder="contact.emailPh" placeholder="example@mail.com">
               </div>
               <div class="col-12">
-                <label class="form-label">رسالتك</label>
-                <textarea class="form-control" rows="4" placeholder="اكتب رسالتك هنا..."></textarea>
+                <label class="form-label" data-i18n="contact.msg">رسالتك</label>
+                <textarea class="form-control" rows="4" data-i18n-placeholder="contact.msgPh" placeholder="اكتب رسالتك هنا..."></textarea>
               </div>
               <div class="col-12">
                 <button class="btn btn-primary btn-lg w-100" type="button">
-                  إرسال (Placeholder) <i class="bi bi-send"></i>
+                  <span data-i18n="contact.send">إرسال (Placeholder)</span> <i class="bi bi-send"></i>
                 </button>
-                <div class="small text-muted mt-2">
+                <div class="small text-muted mt-2" data-i18n="contact.note">
                   * الفورم ده شكلي فقط. لو عايزه يشتغل فعليًا هنوصل API أو خدمة Email.
                 </div>
               </div>
@@ -475,23 +413,17 @@
 
         <div class="col-lg-5">
           <div class="contact-card reveal-on-scroll">
-            <div class="fw-semibold mb-2"><i class="bi bi-link-45deg me-1"></i> Quick Links</div>
+            <div class="fw-semibold mb-2"><i class="bi bi-link-45deg me-1"></i> <span data-i18n="contact.quick">Quick Links</span></div>
             <div class="d-grid gap-2">
-              <a class="btn btn-outline-light" href="#" target="_blank" rel="noreferrer">
-                <i class="bi bi-github me-1"></i> Team GitHub
-              </a>
-              <a class="btn btn-outline-light" href="#" target="_blank" rel="noreferrer">
-                <i class="bi bi-linkedin me-1"></i> Team LinkedIn
-              </a>
-              <a class="btn btn-outline-light" href="mailto:example@mail.com">
-                <i class="bi bi-envelope me-1"></i> Email
-              </a>
+              <a class="btn btn-outline-light" href="#" target="_blank" rel="noreferrer"><i class="bi bi-github me-1"></i> <span data-i18n="contact.teamGithub">Team GitHub</span></a>
+              <a class="btn btn-outline-light" href="#" target="_blank" rel="noreferrer"><i class="bi bi-linkedin me-1"></i> <span data-i18n="contact.teamLinkedin">Team LinkedIn</span></a>
+              <a class="btn btn-outline-light" href="mailto:example@mail.com"><i class="bi bi-envelope me-1"></i> <span data-i18n="contact.teamEmail">Email</span></a>
             </div>
 
             <hr class="border-secondary my-4">
 
             <div class="small text-muted">
-              © <span id="year"></span> Team Portfolio — Built with Bootstrap + jQuery.
+              © <span id="year"></span> <span data-i18n="footer.copy">Team Portfolio — Built with Bootstrap + jQuery.</span>
             </div>
           </div>
         </div>
@@ -514,7 +446,7 @@
           <div class="mb-2"><span class="badge text-bg-light" id="pm-stack">Stack</span></div>
           <p class="text-muted mb-3" id="pm-desc">Description</p>
           <a class="btn btn-primary" id="pm-link" href="#" target="_blank" rel="noreferrer">
-            افتح المشروع <i class="bi bi-box-arrow-up-right"></i>
+            <span data-i18n="projects.open">افتح المشروع</span> <i class="bi bi-box-arrow-up-right"></i>
           </a>
         </div>
       </div>
@@ -526,16 +458,15 @@
     <div class="modal-dialog modal-dialog-centered modal-lg">
       <div class="modal-content modal-glass">
         <div class="modal-header">
-          <h5 class="modal-title fw-bold mb-0">إزاي تعدّل بياناتكم بسرعة؟</h5>
+          <h5 class="modal-title fw-bold mb-0" data-i18n="edit.title">إزاي تعدّل بياناتكم بسرعة؟</h5>
           <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
           <ol class="text-muted mb-0">
-            <li class="mb-2">الفريق: افتح <code>index.html</code> وغيّر أوصاف الأعضاء ولينكاتهم داخل Section <code>#team</code>.</li>
-            <li class="mb-2">المشاريع: كل المشاريع المشتركة داخل Section <code>#projects</code> — انسخ <code>.project-col</code> وزوّد براحتك.</li>
-            <li class="mb-2">التصنيفات: عدّل <code>data-tags</code> (مثال: <code>web api dashboard</code>) علشان الفلاتر تشتغل.</li>
-            <li class="mb-2">البحث: بيبحث في اسم المشروع والـ Stack والوصف القصير.</li>
-            <li class="mb-2">الصور: استبدل <code>assets/img/default-avatar.svg</code> أو غيّر <code>src</code> لكل عضو.</li>
+            <li class="mb-2" data-i18n="edit.l1">الفريق: غيّر أوصاف الأعضاء ولينكاتهم داخل Section الفريق.</li>
+            <li class="mb-2" data-i18n="edit.l2">المشاريع: انسخ كارت مشروع من Section المشاريع وزوّد براحتك.</li>
+            <li class="mb-2" data-i18n="edit.l3">التصنيفات: عدّل data-tags علشان الفلاتر تشتغل.</li>
+            <li class="mb-2" data-i18n="edit.l4">اللغة: زر Translate فوق يبدّل عربي/إنجليزي.</li>
           </ol>
         </div>
       </div>
@@ -546,6 +477,7 @@
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
+  <script src="js/i18n.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
